@@ -15,6 +15,7 @@ public class MyUserDetailsService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		User user = repo.findByUsername(username);
+		System.out.println("Password : " + user.getPassword() + " " + user.getUsername());
 		if(user==null)
 			throw new UsernameNotFoundException("User Not found");
 		
